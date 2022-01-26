@@ -4,7 +4,7 @@ from PyQt5 import QtWidgets
 def seidel(a, x, b, m, err, outputWidget: QtWidgets.QPlainTextEdit):
     n = len(a)
     flag = 1
-
+    maxIter = m
     while flag > 0 and m > 0:
         flag = 0
         e = [0, 0, 0]
@@ -34,7 +34,7 @@ def seidel(a, x, b, m, err, outputWidget: QtWidgets.QPlainTextEdit):
     outputWidget.appendPlainText(f'Error X = {e[0]:.5f}')
     outputWidget.appendPlainText(f'Error Y = {e[1]:.5f}')
     outputWidget.appendPlainText(f'Error Z = {e[2]:.5f}')
-    outputWidget.appendPlainText(f'Number of Iterations = {m}')
+    outputWidget.appendPlainText(f'Number of Iterations = {maxIter - m}')
 
 
 if __name__ == "__main__":
