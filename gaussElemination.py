@@ -45,7 +45,9 @@ def gaussElemination(func1: Float, eql1, func2: Float, eql2, func3: Float, eql3,
         x[i] = x[i] / a[i][i]
 
     outputWidget.appendPlainText('\nRequired solution is: ')
-    outputWidget.appendPlainText(f'x = {x[0]:.5f} y = {x[1]:.5f} z = {x[2]:.5f}')
+    outputWidget.appendPlainText(f'x = {x[0]:.5f}')
+    outputWidget.appendPlainText(f'y = {x[1]:.5f}')
+    outputWidget.appendPlainText(f'z = {x[2]:.5f}')
 
 
 if __name__ == "__main__":

@@ -4,7 +4,7 @@ from PyQt5 import QtWidgets
 def seidel(a, x, b, m, err, outputWidget: QtWidgets.QPlainTextEdit):
     n = len(a)
     flag = 1
-    # '/'
+
     while flag > 0 and m > 0:
         flag = 0
         e = [0, 0, 0]
@@ -26,9 +26,15 @@ def seidel(a, x, b, m, err, outputWidget: QtWidgets.QPlainTextEdit):
             e[j] = ea
         m -= 1
         # print the updated solution
-    outputWidget.appendPlainText(f'x = {x[0]:.5f} y = {x[1]:.5f} z = {x[2]:.5f}')
-    outputWidget.appendPlainText(f'error  = {ea:.5f}  iterations = {m:.5f}')
+    outputWidget.appendPlainText('\nRequired solution is: ')
+    outputWidget.appendPlainText(f'x = {x[0]:.5f}')
+    outputWidget.appendPlainText(f'y = {x[1]:.5f}')
+    outputWidget.appendPlainText(f'z = {x[2]:.5f}')
 
+    outputWidget.appendPlainText(f'Error X = {e[0]:.5f}')
+    outputWidget.appendPlainText(f'Error Y = {e[1]:.5f}')
+    outputWidget.appendPlainText(f'Error Z = {e[2]:.5f}')
+    outputWidget.appendPlainText(f'Number of Iterations = {m}')
 
 
 if __name__ == "__main__":
